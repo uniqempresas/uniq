@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,8 +14,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { signIn } from "./actions";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,15 +26,16 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Stub: loga no console por enquanto
-    console.log("Tentativa de login:", { email, password });
+    const result = await signIn(email, password);
 
-    // Simula um delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    if (result.error) {
+      toast.error(result.error);
+      setLoading(false);
+      return;
+    }
 
-    setLoading(false);
-    // Futuramente: redirecionar para /dashboard
-    // router.push("/dashboard");
+    toast.success("Login realizado com sucesso!");
+    router.push("/dashboard");
   }
 
   return (

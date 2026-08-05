@@ -35,7 +35,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   // Protected routes
-  const protectedPaths = ["/dashboard", "/chat"];
+  const protectedPaths = ["/dashboard", "/chat", "/crm"];
   const isProtectedPath = protectedPaths.some((path) =>
     request.nextUrl.pathname.startsWith(path)
   );
@@ -51,6 +51,53 @@ export async function updateSession(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
     return NextResponse.redirect(url);
+  }
+
+  // For authenticated users on protected routes, validate profile and company
+  if (isProtectedPath && user) {
+    // Buscar perfil do usuário
+    const { data: profile } = await supabase
+      .from("me_usuario")
+      .select("id, empresa_id, role, ativo")
+      .eq("id", user.id)
+      .single();
+
+    // Se não tiver perfil, empresa_id, ou estiver inativo, fazer signOut
+    if (!profile || !profile.empresa_id || !profile.ativo) {
+      await supabase.auth.signOut();
+      const url = request.nextUrl.clone();
+      url.pathname = "/login";
+      return NextResponse.redirect(url);
+    }
+
+    // Verificar se a empresa existe
+    const { data: empresa } = await supabase
+      .from("me_empresa")
+      .select("id")
+      .eq("id", profile.empresa_id)
+      .single();
+
+    if (!empresa) {
+      await supabase.auth.signOut();
+      const url = request.nextUrl.clone();
+      url.pathname = "/login";
+      return NextResponse.redirect(url);
+    }
+
+    // Armazenar empresa_id e role em cookies para uso nas páginas
+    supabaseResponse.cookies.set("empresa_id", profile.empresa_id, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+    });
+
+    supabaseResponse.cookies.set("user_role", profile.role, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+    });
   }
 
   return supabaseResponse;
