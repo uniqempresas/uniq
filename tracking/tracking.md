@@ -35,8 +35,10 @@
 | Conexão com Supabase | ✅ Concluído | Clientes browser/server, middleware e `.env.local` configurados |
 | Middleware de autenticação | ✅ Concluído | Protege `/dashboard` e `/chat`; redireciona logados de `/login` |
 | Schema local inicial | ✅ Concluído | Migration `001_initial_schema.sql` com 4 tabelas + RLS + seed *(não será aplicada — ver decisão abaixo)* |
-| Autenticação real (login/cadastro) | 🟡 Em progresso | Tela de login criada, mas `handleLogin()` ainda é stub (não chama Supabase Auth) |
-| Cadastro de parceiro/usuário | ⬜ Pendente | Não existe tela nem fluxo de sign-up — usar tabelas `me_empresa` e `me_usuario` do protótipo |
+| Autenticação real (login/cadastro) | ✅ Concluído | Login real implementado usando `me_usuario`/`me_empresa`; build e lint OK |
+| Cadastro de parceiro/usuário | ⬜ Pendente | Fluxo de convite/criação de empresa e usuário |
+| Push para repositório GitHub `uniqempresas/uniq` | 🟡 **Em progresso** | Commit local feito; falta autenticar `gh` como `uniqempresas` e fazer push |
+| Deploy inicial na Vercel | ⬜ Pendente | Depende do push correto no GitHub da UNIQ |
 | Migration local aplicada no Supabase | ❌ Não aplicar | Decisão do parceiro: reaproveitar tabelas do protótipo (`me_empresa`, `me_usuario`, etc.) |
 | **Mapeamento do banco de protótipo** | ✅ **Concluído** | **Documentado em `docs/banco-prototipo.md` — sem alterações no Supabase** |
 | Dashboard inicial + Sidebar | ⬜ Pendente | Semana 2 |
