@@ -41,7 +41,7 @@
 | Push para repositório GitHub `uniqempresas/uniq` | ✅ Concluído | Feito via token PAT; remote configurado para pushes futuros |
 | Deploy inicial na Vercel | ✅ Concluído | URL: https://uniq-umber.vercel.app — login e dashboard funcionando |
 | Dashboard inicial + Sidebar | ✅ Concluído | Dashboard mínima criada; exibe usuário, empresa e módulos |
-| **Layout base (sidebar + identidade UNIQ)** | 🟡 **Em progresso** | **Próximo: chamar @designer para criar layout seguindo DESIGN.md, usando protótipo como referência** |
+| **Layout base (sidebar + identidade UNIQ)** | ✅ Concluído | Sidebar escura com navegação, header com saudação/avatar, AppShell, dashboard refeita com identidade UNIQ, página de chat placeholder |
 | Chat com Melissa (Base UNIQ) | ⬜ Pendente | Semana 2 — banco de protótipo já tem tabelas `mel_*` e `crm_chat_*` |
 | Integração n8n ↔ Base UNIQ | 🟡 Parcial no banco | Semana 3 — banco de protótipo já tem tabelas e Edge Functions; frontend não existe |
 | CRM leve de leads | 🟡 Parcial no banco | Semana 3 — tabelas `crm_*` já existem; tela não existe |
@@ -225,13 +225,13 @@ Decisão aprovada pelo parceiro em 05/08/2026:
 > **Decisão de design:** as telas do protótipo `mvp-uniq_uat4` são usadas como **referência**, mas serão **recriadas no Next.js** com shadcn/ui + `DESIGN.md`.
 
 ### Tarefas
-- [ ] Criar layout padrão (sidebar escura + conteúdo claro) seguindo `DESIGN.md`
-- [ ] Aplicar identidade UNIQ (cores, tipografia, avatar)
-- [ ] Refazer dashboard inicial do parceiro
-- [ ] Criar tela de chat com a Melissa (modo consultoria)
+- [x] Criar layout padrão (sidebar escura + conteúdo claro) seguindo `DESIGN.md`
+- [x] Aplicar identidade UNIQ (cores, tipografia, avatar)
+- [x] Refazer dashboard inicial do parceiro
+- [x] Criar tela de chat com a Melissa (modo consultoria) — estrutura vazia, funcionalidade pendente
 - [ ] Exibir avatar da Melissa nas mensagens
 - [ ] Salvar mensagens do chat no Supabase *(banco de protótipo já tem `mel_chat`, `mel_consultoria_config`, etc.)*
-- [ ] Criar painel de módulos ativos/pendentes
+- [x] Criar painel de módulos ativos/pendentes
 
 **Entregável:** parceiro consegue logar, conversar com a Melissa e ver módulos em layout consistente.
 
