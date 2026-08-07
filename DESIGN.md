@@ -33,7 +33,8 @@ Cada elemento visual existe para reduzir atrito e aumentar confiança. Nada é d
 
 | Token | Hex | Nome | Função |
 |-------|-----|------|--------|
-| `--color-grafite` | `#1F2937` | Grafite escuro | Sidebar, textos principais, headers de tabela, títulos |
+| `--color-grafite` | `#1F2937` | Grafite escuro | Textos principais, headers de tabela, títulos |
+| `--color-sidebar` | `#0F172A` | Sidebar escuro | Fundo da barra lateral de navegação |
 | `--color-petroleo` | `#3E5653` | Verde petróleo | Cor corporativa, elementos de marca, bordas de destaque, links |
 | `--color-cinza-verde` | `#627271` | Cinza esverdeado | Textos secundários, labels, placeholders, bordas de cards |
 | `--color-menta` | `#86CB92` | Verde menta | CTAs primários, botões, indicadores de sucesso, gráficos positivos, badges ativos, destaque da Melissa |
@@ -193,7 +194,7 @@ Erro: borda #E57373, mensagem em 12px #E57373
 ### 4.4 Navegação (Sidebar)
 
 ```
-Fundo: #1F2937 (grafite escuro)
+Fundo: #0F172A (sidebar escuro)
 Largura: 240px (desktop), 64px (collapsed)
 Padding: 24px 16px
 Logo no topo: 32px de altura, centralizado ou alinhado à esquerda
@@ -331,7 +332,7 @@ Ações: ícones ghost (20px, #627271, hover #1F2937)
 ```
 ┌─────────────┬────────────────────────────────────┐
 │  Sidebar    │  Header (opcional)                  │
-│  #1F2937    │  breadcrumb + notificações + avatar │
+│  #0F172A    │  breadcrumb + notificações + avatar │
 │  240px      ├────────────────────────────────────┤
 │             │  Conteúdo principal                 │
 │             │  #EFEFEF                            │
@@ -358,7 +359,7 @@ Ações: ícones ghost (20px, #627271, hover #1F2937)
 ### Hierarquia de superfícies
 1. **Fundo da página** — `#EFEFEF`, sem elevação
 2. **Cards e containers** — `#FFFFFF`, elevação 1
-3. **Sidebar** — `#1F2937`, sem sombra (plana na borda)
+3. **Sidebar** — `#0F172A`, sem sombra (plana na borda)
 4. **Modais e overlays** — `#FFFFFF`, elevação 3, backdrop com `rgba(31, 41, 55, 0.5)`
 5. **Notificações** — elevação 4, destaque máximo
 
@@ -422,7 +423,7 @@ Você está gerando UI para a Base UNIQ, plataforma de Transformação Digital p
 Siga o Design System abaixo:
 
 CORES:
-- Sidebar/Textos: #1F2937 (Grafite escuro)
+- Sidebar: #0F172A (Sidebar escuro) | Textos: #1F2937 (Grafite escuro)
 - Marca/Destaque: #3E5653 (Verde petróleo)
 - Secundário/Bordas: #627271 (Cinza esverdeado)
 - CTAs/Ação: #86CB92 (Verde menta) — USAR COM MODERAÇÃO
@@ -440,7 +441,7 @@ COMPONENTES PRINCIPAIS:
 - Botão primário: fundo #86CB92, texto branco, radius 8px
 - Botão secundário: borda #3E5653, texto #3E5653, fundo transparente, radius 8px
 - Cards: fundo branco, radius 12px, shadow sutil (0 1px 3px rgba(0,0,0,0.06))
-- Sidebar: fundo #1F2937, 240px, itens com hover rgba(255,255,255,0.06), ativo com #86CB92
+- Sidebar: fundo #0F172A, 240px, itens com hover rgba(255,255,255,0.06), ativo com #86CB92
 - Chat Melissa: bolha esquerda branca com borda #86CB92, bolha parceiro #3E5653
 - Inputs: fundo #F5F5F5, radius 8px, focus borda #3E5653
 - Badges: pill shape, sucesso #86CB92, inativo #EFEFEF

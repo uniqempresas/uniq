@@ -114,7 +114,7 @@ export function Sidebar() {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex lg:flex-col lg:w-60 lg:shrink-0 bg-grafite h-screen sticky top-0">
+      <aside className="hidden lg:flex lg:flex-col lg:w-60 lg:shrink-0 bg-[#0F172A] h-screen sticky top-0">
         <SidebarContent />
       </aside>
     </>
@@ -130,7 +130,7 @@ export function MobileSidebar() {
       >
         <Menu className="size-5" />
       </SheetTrigger>
-      <SheetContent side="left" className="w-64 bg-grafite p-0 border-r-0">
+      <SheetContent side="left" className="w-64 bg-[#0F172A] p-0 border-r-0">
         <SheetHeader className="sr-only">
           <SheetTitle>Menu de navegação</SheetTitle>
         </SheetHeader>
