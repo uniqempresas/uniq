@@ -204,8 +204,8 @@ Itens de navegação:
   - Border-radius: 8px
   - Ícone: 20px, #FFFFFF opacidade 60%
   - Texto: Inter 500, 14px, #FFFFFF opacidade 80%
-  - Hover: fundo rgba(255,255,255,0.06)
-  - Ativo: fundo #86CB92 com opacidade 15%, ícone e texto #86CB92
+  - Hover: fundo rgba(255,255,255,0.05), texto #FFFFFF opacidade 80%
+  - Ativo: fundo rgba(134,203,146,0.07), ring 1px #86CB92 com opacidade 60%, sombra sutil verde, ícone e texto #86CB92
   - Espaçamento entre grupos: 16px
 
 Avatar do parceiro no rodapé:
@@ -441,7 +441,7 @@ COMPONENTES PRINCIPAIS:
 - Botão primário: fundo #86CB92, texto branco, radius 8px
 - Botão secundário: borda #3E5653, texto #3E5653, fundo transparente, radius 8px
 - Cards: fundo branco, radius 12px, shadow sutil (0 1px 3px rgba(0,0,0,0.06))
-- Sidebar: fundo #0F172A, 240px, itens com hover rgba(255,255,255,0.06), ativo com #86CB92
+- Sidebar: fundo #0F172A, 240px, itens com hover rgba(255,255,255,0.05), ativo com ring 1px #86CB92/60 + fundo rgba(134,203,146,0.07) + ícone/texto #86CB92
 - Chat Melissa: bolha esquerda branca com borda #86CB92, bolha parceiro #3E5653
 - Inputs: fundo #F5F5F5, radius 8px, focus borda #3E5653
 - Badges: pill shape, sucesso #86CB92, inativo #EFEFEF

@@ -67,8 +67,8 @@ function SidebarNav() {
               className={cn(
                 "group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150",
                 isActive
-                  ? "bg-menta/15 text-menta"
-                  : "text-white/70 hover:bg-white/[0.06] hover:text-white/90"
+                  ? "bg-menta/[0.07] text-menta ring-1 ring-menta/60 shadow-[0_0_12px_-4px_rgba(134,203,146,0.25)]"
+                  : "text-white/70 hover:bg-white/[0.05] hover:text-white/80"
               )}
             >
               <Icon className="size-5 shrink-0" />
