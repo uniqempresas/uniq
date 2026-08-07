@@ -37,6 +37,7 @@
 | Schema local inicial | ✅ Concluído | Migration `001_initial_schema.sql` com 4 tabelas + RLS + seed *(não será aplicada — ver decisão abaixo)* |
 | Autenticação real (login/cadastro) | ✅ Concluído | Login real implementado usando `me_usuario`/`me_empresa`; build e lint OK |
 | Cadastro de parceiro/usuário | ⬜ Pendente | Fluxo de convite/criação de empresa e usuário |
+| Cópia de assets reaproveitáveis do protótipo | ✅ Concluído | Migrations, Edge Functions, types, utils, config de menu copiados |
 | Push para repositório GitHub `uniqempresas/uniq` | ✅ Concluído | Feito via token PAT; remote configurado para pushes futuros |
 | Deploy inicial na Vercel | ✅ Concluído | URL: https://uniq-umber.vercel.app — login e dashboard funcionando |
 | Dashboard inicial + Sidebar | ✅ Concluído | Dashboard mínima criada; exibe usuário, empresa e módulos |
