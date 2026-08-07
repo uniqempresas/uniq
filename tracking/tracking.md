@@ -41,6 +41,7 @@
 | Push para repositório GitHub `uniqempresas/uniq` | ✅ Concluído | Feito via token PAT; remote configurado para pushes futuros |
 | Deploy inicial na Vercel | ✅ Concluído | URL: https://uniq-umber.vercel.app — login e dashboard funcionando |
 | Dashboard inicial + Sidebar | ✅ Concluído | Dashboard mínima criada; exibe usuário, empresa e módulos |
+| **Layout base (sidebar + identidade UNIQ)** | 🟡 **Em progresso** | **Próximo: chamar @designer para criar layout seguindo DESIGN.md, usando protótipo como referência** |
 | Chat com Melissa (Base UNIQ) | ⬜ Pendente | Semana 2 — banco de protótipo já tem tabelas `mel_*` e `crm_chat_*` |
 | Integração n8n ↔ Base UNIQ | 🟡 Parcial no banco | Semana 3 — banco de protótipo já tem tabelas e Edge Functions; frontend não existe |
 | CRM leve de leads | 🟡 Parcial no banco | Semana 3 — tabelas `crm_*` já existem; tela não existe |
@@ -104,13 +105,13 @@ Decisão aprovada pelo parceiro em 05/08/2026:
 
 ---
 
-### Fase 1 — Core da Base UNIQ (próxima)
+### Fase 1 — Core da Base UNIQ (concluída)
 **Objetivo:** fazer login real e usar as tabelas existentes do protótipo como core.
 
-- [ ] Implementar login real em `src/app/(auth)/login/page.tsx` usando `supabase.auth.signInWithPassword()`.
-- [ ] Após login, buscar perfil em `me_usuario` e validar vínculo com `me_empresa`.
-- [ ] Ajustar middleware para validar `empresa_id` + `role`/`cargo` nas rotas protegidas.
-- [ ] Criar server actions/helpers de autenticação baseados em `me_usuario` e `me_empresa`.
+- [x] Implementar login real em `src/app/(auth)/login/page.tsx` usando `supabase.auth.signInWithPassword()`.
+- [x] Após login, buscar perfil em `me_usuario` e validar vínculo com `me_empresa`.
+- [x] Ajustar middleware para validar `empresa_id` + `role`/`cargo` nas rotas protegidas.
+- [x] Criar server actions/helpers de autenticação baseados em `me_usuario` e `me_empresa`.
 - [ ] Criar fluxo de cadastro/convite de parceiro — inserir em `me_empresa`, `me_cargo` e `me_usuario` (possivelmente via Edge Function `create-user`).
 - [ ] Adicionar campos faltantes nas tabelas existentes **somente se necessário** (ex: papel/role, status ativo).
 - [ ] (Opcional) Adicionar tabela auxiliar `parceiro_modulos` se `unq_empresa_modulos` não atender.
@@ -121,17 +122,19 @@ Decisão aprovada pelo parceiro em 05/08/2026:
 
 ---
 
-### Fase 2 — Dashboard + Chat da Melissa
-**Objetivo:** parceiro loga e vê a Melissa na Base UNIQ.
+### Fase 2 — Layout Base + Dashboard + Chat da Melissa (próxima)
+**Objetivo:** parceiro loga e vê a Melissa na Base UNIQ, com layout profissional seguindo o `DESIGN.md`.
 
-- [ ] Criar layout padrão (sidebar escura + conteúdo claro).
-- [ ] Criar dashboard inicial do parceiro.
+> **Decisão de design:** as telas do protótipo `mvp-uniq_uat4` serão usadas como **referência de layout e fluxo**, mas **não serão copiadas diretamente**. O motivo é que o protótipo usa Vite + React Router + componentes manuais + Material Symbols, enquanto a Base UNIQ usa Next.js 14 App Router + shadcn/ui + lucide-react. Recriar no Next.js garante consistência com o `DESIGN.md`, SSR e manutenibilidade.
+
+- [ ] Criar layout padrão (sidebar escura + conteúdo claro) seguindo `DESIGN.md` e usando shadcn/ui.
+- [ ] Refazer a dashboard inicial do parceiro com a identidade UNIQ (cores, tipografia, avatar).
 - [ ] Criar tela de chat com a Melissa.
 - [ ] Exibir avatar da Melissa nas mensagens.
-- [ ] Salvar mensagens do chat no Supabase usando tabelas do protótipo (`mel_chat`, etc.) via camada de ligação.
+- [ ] Salvar mensagens do chat no Supabase usando tabelas do protótipo (`mel_chat`, etc.).
 - [ ] Criar painel de módulos ativos/pendentes.
 
-**Entregável:** parceiro consegue logar, conversar com a Melissa e ver módulos.
+**Entregável:** parceiro consegue logar, conversar com a Melissa e ver módulos em um layout consistente com a UNIQ.
 
 ---
 
@@ -215,20 +218,22 @@ Decisão aprovada pelo parceiro em 05/08/2026:
 
 ---
 
-## Semana 2 — Dashboard e Chat da Melissa
+## Semana 2 — Layout, Dashboard e Chat da Melissa
 
-**Objetivo:** o parceiro loga e vê a Melissa na Base UNIQ.
+**Objetivo:** o parceiro loga e vê a Melissa em um layout profissional e consistente com a identidade UNIQ.
+
+> **Decisão de design:** as telas do protótipo `mvp-uniq_uat4` são usadas como **referência**, mas serão **recriadas no Next.js** com shadcn/ui + `DESIGN.md`.
 
 ### Tarefas
-- [ ] Criar layout padrão (sidebar escura + conteúdo claro)
+- [ ] Criar layout padrão (sidebar escura + conteúdo claro) seguindo `DESIGN.md`
 - [ ] Aplicar identidade UNIQ (cores, tipografia, avatar)
-- [ ] Criar dashboard inicial do parceiro
+- [ ] Refazer dashboard inicial do parceiro
 - [ ] Criar tela de chat com a Melissa (modo consultoria)
 - [ ] Exibir avatar da Melissa nas mensagens
 - [ ] Salvar mensagens do chat no Supabase *(banco de protótipo já tem `mel_chat`, `mel_consultoria_config`, etc.)*
 - [ ] Criar painel de módulos ativos/pendentes
 
-**Entregável:** parceiro consegue logar, conversar com a Melissa e ver módulos.
+**Entregável:** parceiro consegue logar, conversar com a Melissa e ver módulos em layout consistente.
 
 ---
 
