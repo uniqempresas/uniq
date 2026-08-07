@@ -38,10 +38,8 @@
 | Autenticação real (login/cadastro) | ✅ Concluído | Login real implementado usando `me_usuario`/`me_empresa`; build e lint OK |
 | Cadastro de parceiro/usuário | ⬜ Pendente | Fluxo de convite/criação de empresa e usuário |
 | Push para repositório GitHub `uniqempresas/uniq` | ✅ Concluído | Feito via token PAT; remote configurado para pushes futuros |
-| Deploy inicial na Vercel | 🟡 Em progresso | Aguardando configuração na Vercel pelo usuário |
-| Migration local aplicada no Supabase | ❌ Não aplicar | Decisão do parceiro: reaproveitar tabelas do protótipo (`me_empresa`, `me_usuario`, etc.) |
-| **Mapeamento do banco de protótipo** | ✅ **Concluído** | **Documentado em `docs/banco-prototipo.md` — sem alterações no Supabase** |
-| Dashboard inicial + Sidebar | ⬜ Pendente | Semana 2 |
+| Deploy inicial na Vercel | ✅ Concluído | URL: https://uniq-umber.vercel.app — login e dashboard funcionando |
+| Dashboard inicial + Sidebar | ✅ Concluído | Dashboard mínima criada; exibe usuário, empresa e módulos |
 | Chat com Melissa (Base UNIQ) | ⬜ Pendente | Semana 2 — banco de protótipo já tem tabelas `mel_*` e `crm_chat_*` |
 | Integração n8n ↔ Base UNIQ | 🟡 Parcial no banco | Semana 3 — banco de protótipo já tem tabelas e Edge Functions; frontend não existe |
 | CRM leve de leads | 🟡 Parcial no banco | Semana 3 — tabelas `crm_*` já existem; tela não existe |
